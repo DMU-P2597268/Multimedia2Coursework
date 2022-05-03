@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Lea_Plays Gaming Blog </title>
+    <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+    <style>
+    body {
+      background-color: rgb(61, 171, 247);
+    }
+    .div-main {
+      background-color: white;
+    }
+    h1 {
+      font-family: monospace;
+      color: rgb(255, 0, 64);
+      padding-left: 500px;
+      font-size: 60px;
+    }
+    #main {
+      text-align: center;
+
+    }
+    </style>
+</head>
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="whatsnew.html">What's New</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="news.html">News</a>
+    <a href="upcominggames.html">Upcoming Games</a>
+    <a href="about.html">About the Gamer</a>
+  </div>
+  <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav(){
+      document.getElementById("mySidenav").style.width="0";
+      document.getElementById("main").style.marginLeft="0";
+    }
+  </script>
+
+    <h1> Gallery </h1>
+
+<!---Slideshow (change pictures)---->
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext"> 1 / 5</div>
+        <img src="img/acv ss.jpg" style="width:100%">
+        <div class="text"> Assassin's Creed: Valhalla - the main character stands looking away</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"> 2 / 5</div>
+        <img src="img/borderlands3.jpg" style="width:100%">
+        <div class="text"> Borderlands 3 - a character stands menacingly</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"> 3 / 5</div>
+        <img src="img/journey.jpg" style="width:100%">
+        <div class="text"> Journey - A stunning masterpiece </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"> 4 / 5</div>
+        <img src="img/ud.jpg" style="width:100%">
+        <div class="text"> Until Dawn - A horror game with amazing gameplay </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"> 5 / 5</div>
+        <img src="img/wd2.jpg" style="width:100%">
+        <div class="text"> Watch Dogs - Much better than the first </div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+
+<!---this is the javascript for the slideshow--->
+    <script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<!---gallery---->
+<!-- The grid: four columns -->
+<div class="row">
+  <div class="column">
+    <img src="img/fallout.jpg" alt="fallout screenshot" width="100%" height="100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/dyinglight2.jpg" alt="dying light 2 screenshot" width="100%" height="100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/stray.jpg" alt="stray screenshot" width="100%" height="100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/cyberpunk.jpg" alt="cyberpunk 2077 screenshot" width="100%" height="100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<!-- The expanding image container -->
+<div class="container">
+  <!-- Close the image -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+  <!-- Expanded image -->
+  <img id="expandedImg" style="width:100%">
+
+  <!-- Image text -->
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>

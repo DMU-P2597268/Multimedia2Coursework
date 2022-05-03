@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Lea_Plays Gaming Blog </title>
+  <style>
+  body {
+    background-color: rgb(61, 171, 247);
+  }
+  .div-main {
+    background-color: white;
+  }
+  h1 {
+    font-family: monospace;
+    color: rgb(255, 0, 64);
+    padding-left: 500px;
+    font-size: 60px;
+  }
+  #main {
+    text-align: center;
+
+  }
+  </style>
+  <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!--menu, this is the code for the menu-->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="whatsnew.html">What's New</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="news.html">News</a>
+  <a href="upcominggames.html">Upcoming Games</a>
+  <a href="about.html">About the Gamer</a>
+</div>
+<button class="openbtn" onclick="openNav()">&#9776; Menu</button>
+
+<!--this is the java script for the menu-->
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+
+  function closeNav(){
+    document.getElementById("mySidenav").style.width="0";
+    document.getElementById("main").style.marginLeft="0";
+  }
+</script>
+<h1> Lea_Plays </h1>
+<div id="main" class="div-main">
+  <h2> Featured </h2>
+  <iframe width="1150" height="480" src="https://www.youtube.com/embed/u84hRUQlaio" title="YouTube video player" frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p> Upcoming Game: Stray </p>
+    <p> read more on Upcoming Games <a href="upcominggames.html">here</a></p>
+  <h2> Horizon Forbidden West </h2>
+  <p> The release of Horizon Forbidden West on the 18th February 2022 has taken the gaming community by storm, with many people praising
+    the games visuals and gameplay. The game follows our protagonist, Aloy, as she traverses a new and strange area similiar to that of
+    the one she already knows. Following on from the first game, Aloy, must make her way through a world full of mechanical creatures with
+    new styles and new designs, to uncover the secrets of a plague that kills evrything in it's path. She must explore abandoned cities,
+    underwater locations, deserts and many more. The game overall has received some very positive reviews which make it a possible contender for
+    Game of the Year. Many fans have praised the visuals as well as the immersive open world and intriguing story line.
+    </p>
+  <p>To read more on what's new <a href="whatsnew.html">here</a></p>
+
+  <h2> Is Elden Ring the GOTY? </h2>
+    <p> With the release of the newest 'Souls' Franchise game, Elden Ring, on the 25th of February 2022, players have been raving about it.
+    With a difficulty rivaling that of it's predecessors, that so many fans enjoy, a lot of people have been hailing the game, calling it the game
+    of the year. But should it win Game of the Year? With so many other comparatively good video games hitting the market this year, Elden Ring seems to
+    have made it's mark in the hearts of video game fans. FromSoft's latest game seems to be a front runner for Game of the Year, however, we do still
+    have plenty of time for another game to come along that could potentially rival it.</p>
+    <p> Read more on news <a href="news.html">here</a> </p>
+
+<!---this is the code for the slideshow--->
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext"> 1 / 5</div>
+        <img src="img/skyrim.jpg" style="width:100%">
+        <div class="text"> Skyrim - The dragonborn fights a dragon</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"> 2 / 5</div>
+        <img src="img/fallout.jpg" style="width:100%">
+        <div class="text"> Fallout 4 - The Red Rocket Gas Station</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"> 3 / 5</div>
+        <img src="img/cyberpunk.jpg" style="width:100%">
+        <div class="text"> CyberPunk 2077 - The Streets of Night City </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"> 4 / 5</div>
+        <img src="img/masseffect.jpg" style="width:100%">
+        <div class="text"> Mass Effect Legendary Edition - Commander Shephard aims a gun at a reaper ship </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"> 5 / 5</div>
+        <img src="img/hzd ss.jpg" style="width:100%">
+        <div class="text"> Horizon Zero Dawn - Aloy fights a mechanical creature</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+
+<!---this is the javascript for the slideshow--->
+    <script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<p> See more screenshots for video games <a href="gallery.html">here</a></p>
+
+  <h3> Hi, I'm Lea Plays, also known as Leanne Wilson. I like video games, so
+    if you do too then you are in the right place. </h3>
+    <p> view more here on about me <a href="about.html">here</a></p>
+</div>
+
+</body>
+<footer>
+  P2597268
+</footer>
+</html>
